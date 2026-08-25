@@ -1,0 +1,73 @@
+body {
+  font-family:'Segoe UI',Tahoma, Genova, Verdans, sans-serif;
+  background: linear-gradient(135deg, #1f4068, #162447);
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0%;
+}
+
+.container {
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 5px;
+    color: #e43f5a;
+}
+
+.subititulo {
+    color: #a7a9be;
+    margin-bottom: 20px;
+}
+
+.Flashcard {
+    background: color #0f3460; 
+    border-radius: 12px;
+    padding: 40px 20px;
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.3s;
+    border: 2px solid #1a4b8c;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+
+p{
+ front-size:1.1rem;
+ margin-top: 15px;
+}
+
+.escondido {
+    display: none;
+}
+
+.botoes {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #e43f5a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #d63050;
+}
