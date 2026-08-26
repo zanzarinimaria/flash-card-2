@@ -1,43 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1f4068, #162447);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f4068, #162447);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 .container {
     text-align: center;
     max-width: 500px;
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 h1 {
-    margin-bottom: 5px;
     color: #e43f5a;
+    font-size: 2rem;
 }
 
 .subtitulo {
     color: #a7a9be;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .flashcard {
     background-color: #0f3460; 
     border-radius: 12px;
-    padding: 30px 20px;
-    min-height: 180px;
+    padding: 35px 25px;
+    min-height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s, background-color 0.2s;
     border: 2px solid #1a4b8c;
-    margin-bottom: 20px;
+}
+
+.flashcard:hover {
+    transform: translateY(-2px);
+    background-color: #123c6e;
 }
 
 .conteudo-card {
@@ -45,46 +59,44 @@ h1 {
 }
 
 h3 {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
     font-weight: 600;
 }
 
 p {
     font-size: 1.1rem;
-    margin-top: 15px;
-    color: #4ee2ec; /* Cor diferenciada para a resposta */
+    margin-top: 20px;
+    color: #4ee2ec;
+    line-height: 1.4;
 }
 
 .escondido {
     display: none !important;
 }
 
-/* Garante que os botões fiquem acima de qualquer camada invisível */
 .botoes {
-    margin-top: 20px;
-    position: relative;
-    z-index: 10;
+    margin-top: 15px;
 }
 
 button {
     background-color: #e43f5a;
-    color: white;
+    color: #ffffff;
     border: none;
-    padding: 12px 30px;
+    padding: 14px 32px;
     font-size: 1rem;
+    font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(228, 63, 90, 0.3);
     transition: background 0.2s, transform 0.1s;
-    position: relative;
-    z-index: 20;
 }
 
 button:hover {
     background-color: #d63050;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
 }
