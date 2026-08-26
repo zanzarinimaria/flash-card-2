@@ -27,7 +27,6 @@ const flashcards = [
 ];
 
 let indiceAtual =0;
-let mostrandoResposta = false;
 
 //Elementos do DOM
 const elementoPergunta = document.getElementById("pergunta");
@@ -37,7 +36,7 @@ const elementoResposta = document.getElementById("resposta");
 function atualizarCard() {
     elementoPergunta.textContent = flashcards[indiceAtual].pergunta;
     elementoResposta.textContent = flashcards[indiceAtual].resposta;
-    elementoResposta.classList.add("escondido");
+    elementoResposta.classList.add("escondido"); //esconde a resposta do novo card
     mostrandoResposta = false;
 }
 
