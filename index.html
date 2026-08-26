@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-        <meta charset="UTF-8"
-        <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-        <title> FlashcardS de Ópitica - robótica</title>
-        <link rel="stylelesheet" href="style.css">
-    </head>
-    <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de Óptica - Robótica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
     <div class="container">
-        <h1> FlasHcardS de Ópitica </h1>
+        <h1>Flashcards de Óptica</h1>
         <p class="subtitulo">Clique no cartão para ver a resposta!</p>
 
-        <!--Flashcards Interativos-->
-    <div class="FlasHcardS" id="card" onclick="virarCard()">
-        <div class="Conteudo-card">
-            <h3 id="resposta" class="escondido">Carregando resposta...</p>
+        <!-- Flashcards Interativos -->
+        <div class="flashcard" id="card" onclick="virarCard()">
+            <div class="conteudo-card">
+                <!-- ID Pergunta e ID Resposta agora estão separados corretamente -->
+                <h3 id="pergunta">Carregando pergunta...</h3> 
+                <p id="resposta" class="escondido">Carregando resposta...</p>
             </div>
-    </div>
-    
-    <!--Botões de Navegação-->
-    <div class="--Botões">
-        <button onclick="proximoCard()">Próximo Card</button>
-           </div>
         </div>
+    
+        <!-- Botões de Navegação -->
+        <div class="botoes">
+            <button onclick="proximoCard(event)">Próximo Card</button>
+        </div>
+    </div>
 
-        <script src="script.js"></script>
-        </body>
-        </html>
-        
+    <!-- O script DEVE ficar aqui no final, com o atributo defer -->
+    <script src="script.js" defer></script>
+</body>
+</html>

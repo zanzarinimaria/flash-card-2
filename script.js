@@ -1,63 +1,63 @@
-//  Lista com os flash cards de Ópitica exigido na tarefa
 const flashcards = [
     {
-        pergunta: "1.Ópitica/ Propieades da luz: Qual é a principal propiedade da luzem relação a sua trajetória em meios homogênios?",
-        resposta: "O luz se propaga em linha reta."
+        pergunta: "1. Óptica / Propriedades da luz: Qual é a principal propriedade da luz em relação à sua trajetória em meios homogêneos?",
+        resposta: "A luz se propaga em linha reta."
     },
     {
-        pergunta: "2.Ópitica/reflexão da luz: O que diz a primeira lei da reflexão?",
-        resposta:"O raio incidente, a reta normal e o raiorefletido pertencem ao mesmo plano."
+        pergunta: "2. Óptica / Reflexão da luz: O que diz a primeira lei da reflexão?",
+        resposta: "O raio incidente, a reta normal e o raio refletido pertencem ao mesmo plano."
     },
     {
-        pergunta:"3.Ópitica/Espelhos: Como é a imagem formada por um espelho plano?",
-        resposta:"É virtual, direta e tamanho igual do objeto."
+        pergunta: "3. Óptica / Espelhos: Como é a imagem formada por um espelho plano?",
+        resposta: "É virtual, direta e de tamanho igual ao do objeto."
     },
     {
-        pergunta:"4.Ópitica/Fenômenos da Luz: O que é o fenômenoda refração da luz?",
-        resposta:"É a mudança na velocidade e na direção da luz ao passar de um meio para outro diferente."
+        pergunta: "4. Óptica / Fenômenos da Luz: O que é o fenômeno da refração da luz?",
+        resposta: "É a mudança na velocidade e na direção da luz ao passar de um meio para outro diferente."
     },
     {
-        pergunta:"5.Ópitica/Lentes: Qual é a principal característica de uma lente convergente?",
-        resposta:"Ela é mais espessa no centrodo que nas bordase focalizaos raios de luzem um ponto."
+        pergunta: "5. Óptica / Lentes: Qual é a principal característica de uma lente convergente?",
+        resposta: "Ela é mais espessa no centro do que nas bordas e focaliza os raios de luz em um ponto."
     },
     {
-        pergunta:"6.Ópitica do corpo humano: Qual é a parte do olho humano funciona como uma lente natural que foca a luz na retina?",
-        resposta:"O cristalino."
+        pergunta: "6. Óptica do corpo humano: Qual parte do olho humano funciona como uma lente natural que foca a luz na retina?",
+        resposta: "O cristalino."
     }
 ];
 
-let indiceAtual =0;
+let indiceAtual = 0;
 
-//Elementos do DOM
+// Captura dos elementos do DOM de forma segura
 const elementoPergunta = document.getElementById("pergunta");
 const elementoResposta = document.getElementById("resposta");
 
-//Função para atualizar o card na tela
+// Função para atualizar o conteúdo do card
 function atualizarCard() {
-    elementoPergunta.textContent = flashcards[indiceAtual].pergunta;
-    elementoResposta.textContent = flashcards[indiceAtual].resposta;
-    elementoResposta.classList.add("escondido"); //esconde a resposta do novo card
-    mostrandoResposta = false;
+    if (elementoPergunta && elementoResposta) {
+        elementoPergunta.textContent = flashcards[indiceAtual].pergunta;
+        elementoResposta.textContent = flashcards[indiceAtual].resposta;
+        elementoResposta.classList.add("escondido"); // O próximo card sempre inicia com a resposta oculta
+    }
 }
 
-//Função para virar o card(interaçaõ de clique)
-function virarCard () {
-    if (mostrandoResposta) {
-        elementoResposta.classList.remove("escondido");
-        mostrandoResposta = false;
-   } else {
-    elementoResposta.classList.remove("escondido");
-    mostrandoResposta = true;
-   }
+// Função para alternar a visibilidade da resposta
+function virarCard() {
+    if (elementoResposta) {
+        elementoResposta.classList.toggle("escondido");
+    }
 }
 
-//Função para passar para o próximo card
-function próximoCard () {
-    indiceAtual = (indiceAtual + 1) % flashcards. length;
+// Função para avançar o card
+// O 'event.stopPropagation()' impede que o clique no botão ative também o clique do cartão de fundo
+function proximoCard(event) {
+    if (event) {
+        event.stopPropagation(); 
+    }
+    indiceAtual = (indiceAtual + 1) % flashcards.length;
     atualizarCard();
 }
 
-//...(mantenha as funçóes virarCard e proximoCard iguais)
-window.addEventListener ("DOMContentLoaded", = => {
+// Inicialização segura: aguarda o HTML carregar completamente na tela
+window.addEventListener("DOMContentLoaded", () => {
     atualizarCard();
 });
