@@ -27,37 +27,33 @@ const flashcards = [
 
 let indiceAtual = 0;
 
-// Captura dos elementos do DOM de forma segura
+// Captura segura de referências para evitar o erro de 'null' no console
 const elementoPergunta = document.getElementById("pergunta");
 const elementoResposta = document.getElementById("resposta");
 
-// Função para atualizar o conteúdo do card
 function atualizarCard() {
     if (elementoPergunta && elementoResposta) {
         elementoPergunta.textContent = flashcards[indiceAtual].pergunta;
         elementoResposta.textContent = flashcards[indiceAtual].resposta;
-        elementoResposta.classList.add("escondido"); // O próximo card sempre inicia com a resposta oculta
+        elementoResposta.classList.add("escondido"); // Esconde a resposta do novo card carregado
     }
 }
 
-// Função para alternar a visibilidade da resposta
 function virarCard() {
     if (elementoResposta) {
         elementoResposta.classList.toggle("escondido");
     }
 }
 
-// Função para avançar o card
-// O 'event.stopPropagation()' impede que o clique no botão ative também o clique do cartão de fundo
 function proximoCard(event) {
     if (event) {
-        event.stopPropagation(); 
+        event.stopPropagation(); // Bloqueia o clique propagado para a div pai (.flashcard)
     }
     indiceAtual = (indiceAtual + 1) % flashcards.length;
     atualizarCard();
 }
 
-// Inicialização segura: aguarda o HTML carregar completamente na tela
+// Inicializa a aplicação quando o DOM estiver completamente pronto
 window.addEventListener("DOMContentLoaded", () => {
     atualizarCard();
 });

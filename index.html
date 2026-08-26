@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards de Óptica - Robótica</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Link corrigido apontando para o arquivo CSS local -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <!-- Flashcards Interativos -->
         <div class="flashcard" id="card" onclick="virarCard()">
             <div class="conteudo-card">
-                <!-- ID Pergunta e ID Resposta agora estão separados corretamente -->
+                <!-- Tags com IDs únicos que o script.js vai gerenciar -->
                 <h3 id="pergunta">Carregando pergunta...</h3> 
                 <p id="resposta" class="escondido">Carregando resposta...</p>
             </div>
@@ -23,11 +24,12 @@
     
         <!-- Botões de Navegação -->
         <div class="botoes">
+            <!-- event.stopPropagation() impede o clique de ativar o card de trás -->
             <button onclick="proximoCard(event)">Próximo Card</button>
         </div>
     </div>
 
-    <!-- O script DEVE ficar aqui no final, com o atributo defer -->
-    <script src="script.js" defer></script>
+    <!-- Script carregado de forma segura no final do corpo -->
+    <script src="./script.js" defer></script>
 </body>
 </html>
