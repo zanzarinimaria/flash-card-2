@@ -57,5 +57,7 @@ function próximoCard () {
     atualizarCard();
 }
 
-//Inicializa o primeiro card ao carregar a página
-atualizarCard();
+//...(mantenha as funçóes virarCard e proximoCard iguais)
+window.addEventListener ("DOMContentLoaded", = => {
+    atualizarCard();
+});
